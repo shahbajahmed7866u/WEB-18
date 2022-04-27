@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>:nth-child(1){
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        body>:nth-child(2)>div{
+            /* margin-top: px; */
+            display: flex;
+            /* width: 50%; */
+            justify-content: center;
+            /* border: 2px solid red; */
+        }
+        body>:nth-child(2){
+            width: 30%;
+            margin: auto;
+            margin-top: 20px;
+            /* display: flex; */
+            /* justify-content: center; */
+            /* border: 2px solid red; */
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #form{
+            width: 90%;
+            margin: auto;
+            display: grid;
+            gap: 10px;
+        }
+        #form>input{
+            height: 30px;
+            /* margin: auto; */
+            /* display: grid; */
+            /* gap: 10px; */
+            border-radius: 5px;
+            border: 1px solid rgb(201, 201, 201);
+            
+        }
+        #form>input::placeholder{
+color: grey;
+            
+        }
+        #form>p{
+            font-size: x-small;
+            color: rgb(95, 95, 95);
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        #form>:nth-child(3){
+height: 40px;
+border: none;
+/* margin-bottom: 30px; */
+margin-top: 50px;
+margin-bottom: 10px;
+/* border: 2px solid green; */
+        }
+        #form>div>:nth-child(1){
+color: grey;
+        }
+        #form>div>:nth-child(2){
+text-decoration: none;
+color: rgb(0, 132, 255);
+margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div><img src="https://sso.masaischool.com/brand_dark.svg" alt=""></div>
+    <div>
+        <div>
+            <h3>Login</h3>
+        </div>
+        <form action="" id="form">
+            Email
+            <input type="text" id="mail" placeholder="Enter email">
+            Password
+            <input type="text" id="password" placeholder="Enter password">
+
+            <input type="submit" id="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+// var loginid=[]
+
+   document.querySelector("#form").addEventListener("submit",hihi)
+
+
+
+
+   function hihi(){
+       event.preventDefault()
+       var obj={
+
+        loginmail:form.mail.value,
+        loginpassword:form.password.value
+       }
+    //    loginid.push(obj)
+    //    console.log(id)
+       localStorage.setItem("localloginid",JSON.stringify(obj))
+
+       var signup=JSON.parse(localStorage.getItem("localid"))
+       var login=JSON.parse(localStorage.getItem("localloginid"))
+       if(signup.mail==login.loginmail && signup.password==login.loginpassword){
+    alert("Login Successfull")
+       }
+       else{
+           alert("Username or Password Do not match")
+       }
+   }
+
+
+//    console.log(login)
+//    console.log(signup)
+   
+</script>
