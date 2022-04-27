@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var count= localStorage.getItem("counterValue") || 0
+    var heading =document.createElement("h1") 
+    heading.innerText=count
+    var up = document.createElement("button")
+    up.innerText="increase"
+    up.addEventListener("click",haha)
+    var down = document.createElement("button")
+    down.innerText="decrease"
+    down.addEventListener("click",hihi)
+    document.querySelector('body').append(heading,up,down)
+
+    function haha(){
+        count++
+        heading.innerText=count
+        localStorage.setItem("counterValue",count)
+    }
+    function hihi(){
+        count--
+        heading.innerText=count
+        localStorage.setItem("counterValue",count)
+    }
+
+
+
+    // var a=heading.innerText
+</script>
