@@ -6,23 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         
-        #body{
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 25px;
-            margin: auto;
-        }
-        #body>div>:nth-child(4){
+      *{
+margin: 0px;
+padding: 0px;
+}
+body>:nth-child(1){
+display: flex;
+justify-content: space-around;
+/* margin-top: 30px; */
+background-color: rgb(0, 132, 255);
+margin: none;
+padding: none;
+font-size: xx-large;
+padding: 15px 0px;
+
+}
+body>:nth-child(1)>a{
+text-decoration: none;
+color: white;
+
+}
+#body{
+/* border: 2px solid green; */
+display: grid;
+grid-template-columns: repeat(4,1fr);
+gap: 25px;
+margin: auto;
+}
+#body>div>:nth-child(4){
 /* border: 2px solid green; */
 /* width: 100%; */
 text-decoration: line-through;
-        }
-    
-    </style>
+}
+#body>div>p{
+height: 40px;
+}
+</style>
 </head>
 <body>
-    
+  <div>
+    <a href="index.html">Signup</a>
+    <a href="login.html">Login</a>
+    <a href="mens.html">Mens</a>
+    <a href="womens.html">Womens</a>
+    <a href="cart.html">Cart</a>
+</div>
 </body>
 </html>
 
@@ -484,7 +512,7 @@ text-decoration: line-through;
       strikedoffprice: 1899,
     },
   ];
-
+var arrr= JSON.parse(localStorage.getItem("carts")) ||[]
   var heading = document.createElement("h1");
   heading.innerText = "Womens page";
   var body = document.createElement("div");
@@ -503,7 +531,23 @@ text-decoration: line-through;
     strikedoffprice.innerText = elem.strikedoffprice;
     var addtocart = document.createElement("button");
     addtocart.innerText = "ADD TO CART";
+    addtocart.addEventListener("click",function()
+    {
+      hahaha(elem)
+    })
     card.append(image, name, price, strikedoffprice,addtocart);
     body.append(card);
   });
+
+  function hahaha(elem){
+  var obj={
+    images:elem.image_url,
+    names:elem.name,
+    prices:elem.price,
+    strikedoffprices:elem.strikedoffprice,
+  }
+arrr.push(obj)
+localStorage.setItem("carts",JSON.stringify(arrr))
+console.log(arrr)
+  }
 </script>

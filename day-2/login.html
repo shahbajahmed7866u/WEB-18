@@ -6,19 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+                *{
+            margin: 0px;
+            padding: 0px;
+        }
         body>:nth-child(1){
+            display: flex;
+            justify-content: space-around;
+            /* margin-top: 30px; */
+            background-color: rgb(0, 132, 255);
+            margin: none;
+            padding: none;
+            font-size: xx-large;
+            padding: 15px 0px;
+
+        }
+        body>:nth-child(1)>a{
+text-decoration: none;
+color: white;
+
+        }
+        body>:nth-child(2){
             display: flex;
             justify-content: center;
             margin-top: 30px;
         }
-        body>:nth-child(2)>div{
+        body>:nth-child(3)>div{
             /* margin-top: px; */
             display: flex;
             /* width: 50%; */
             justify-content: center;
             /* border: 2px solid red; */
         }
-        body>:nth-child(2){
+        body>:nth-child(3){
             width: 30%;
             margin: auto;
             margin-top: 20px;
@@ -73,6 +93,12 @@ margin-left: 5px;
     </style>
 </head>
 <body>
+    <div>
+        <a href="index.html">Signup</a>
+        <a href="login.html">Login</a>
+        <a href="mens.html">Mens</a>
+        <a href="womens.html">Womens</a>
+    </div>
     <div><img src="https://sso.masaischool.com/brand_dark.svg" alt=""></div>
     <div>
         <div>
@@ -111,7 +137,8 @@ margin-left: 5px;
        var signup=JSON.parse(localStorage.getItem("localid"))
        var login=JSON.parse(localStorage.getItem("localloginid"))
        if(signup.mail==login.loginmail && signup.password==login.loginpassword){
-    alert("Login Successfull")
+           alert("Login Successfull")
+           window.location.href = "mens.html"
        }
        else{
            alert("Username or Password Do not match")

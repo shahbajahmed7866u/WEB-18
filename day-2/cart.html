@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+table{
+  margin: auto;
+  
+}
+     *{
+margin: 0px;
+padding: 0px;
+}
+body>:nth-child(1){
+display: flex;
+justify-content: space-around;
+/* margin-top: 30px; */
+background-color: rgb(0, 132, 255);
+margin: none;
+padding: none;
+font-size: xx-large;
+padding: 15px 0px;
+
+}
+body>:nth-child(1)>a{
+text-decoration: none;
+color: white;
+
+}
+table{
+    width: 60%;
+}
+#discount{
+    display: flex;
+    width: 55%;
+    justify-content: space-around;
+    margin: auto;
+    /* border: 2px solid green; */
+}
+#discount>:nth-child(1){
+     /* display: flex; */
+    width: 70%; 
+    /* justify-content: space-around; */
+    /* margin: auto;  */
+    /* border: 2px solid green; */
+}
+#total{
+    display: flex;
+    width: 55%;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* border: 2px solid green; */
+}
+#total>:nth-child(1){
+     /* display: flex; */
+    width: 70%; 
+    /* justify-content: space-around; */
+    /* margin: auto;  */
+    /* border: 2px solid green; */
+}
+    </style>
+</head>
+<body>
+    <div>
+        <a href="index.html">Signup</a>
+        <a href="login.html">Login</a>
+        <a href="mens.html">Mens</a>
+        <a href="womens.html">Womens</a>
+    </div>
+    <table>
+        <thead>
+<tr><th>Image</th><th>Name</th><th>Price</th><th>Delete</th></tr>
+        </thead>
+        <tbody id="body">
+        </tbody>
+    </table>
+</body>
+</html>
+
+<script>
+var addCart = JSON.parse(localStorage.getItem("carts")) || []
+
+
+showCart(addCart)
+
+var totalcart=addCart.reduce(function(sum,el,index,arr){
+        return sum + Number(el.prices)
+    },0) || 0
+
+
+// console.log(total)
+function showCart(addCart){
+    addCart.forEach(function (elem,index) {
+        var tr = document.createElement("tr")
+        var td1 = document.createElement("td")
+        var img = document.createElement("img")
+        td1.append(img)
+        img.setAttribute("src",elem.images)
+        var td2 = document.createElement("td")
+        td2.innerText=elem.names
+        var td3 = document.createElement("td")
+        td3.innerText=elem.prices
+        var td4 = document.createElement("td")
+        // td4.setAttribute("id","deleteTable")
+        var remove = document.createElement("button")
+        remove.addEventListener("click",function(){
+            deleteFunc(elem,index)
+        })
+        remove.innerText="Delete Item"
+        td4.append(remove)
+        
+        var td5 = document.createElement("td")
+        tr.append(td1, td2, td3, td4, td5);
+        document.querySelector("#body").append(tr);
+    });
+}
+
+var checkPromo = "masai30" 
+
+
+function deleteFunc(elem,index){
+    addCart.splice(index,1)
+    console.log(addCart)
+    localStorage.setItem("carts",JSON.stringify(addCart))
+    var newCart=JSON.parse(localStorage.getItem("carts"))
+document.querySelector('#body').innerHTML=""
+showCart(newCart)
+}
+
+var discount  = document.createElement("div")
+discount.setAttribute("id","discount")
+var fordiscount = document.createElement("h3")
+fordiscount.innerText="Enter Promo Code for Discount"
+var fordiscountinput = document.createElement("input")
+discount.append(fordiscount,fordiscountinput)
+var fordiscountbutton = document.createElement("button")
+fordiscountbutton.innerText="Apply"
+discount.append(fordiscount,fordiscountinput,fordiscountbutton)
+fordiscountbutton.addEventListener("click",giveDiscount)
+document.querySelector("body").append(discount)
+
+var total  = document.createElement("div")
+total.setAttribute("id","total")
+var fortotal = document.createElement("h3")
+fortotal.innerText="Total"
+var fortotalprice = document.createElement("h3")
+fortotalprice.innerText=totalcart
+console.log(total)
+total.append(fortotal,fortotalprice)
+discount.append(fordiscount,fordiscountinput,fordiscountbutton)
+document.querySelector("body").append(total)
+
+
+function giveDiscount(){
+    if(fordiscountinput.value==checkPromo){
+        console.log("hahaha")
+        totalcart70=newCart*(70/100)
+        fortotalprice.innerText=totalcart70
+        
+    }
+    else{
+     
+    }
+
+}
+
+</script>

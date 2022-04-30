@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+        var nums = [10,6,7,20,3]
+
+
+// console.log(nums.sort())
+
+
+// var out = nums.sort(function(a,b){
+//     return a-b
+// })
+// var out = nums.sort(function(a,b){
+//     return b-a
+// })
+// console.log(out)
+
+
+var str =["a","c","d","b","e","z"]
+
+// console.log(str.sort())
+
+
+// str.sort(function(a,b){
+//     if(a>b){
+//         return 1
+//     }
+//     if(a<b){
+//         return -1
+//     }
+
+//     return 0
+// })
+
+
+// str.sort(function(a,b){
+//     if(a<b){
+//         return 1
+//     }
+//     if(a>b){
+//         return -1
+//     }
+//     return 0
+// })
+
+// console.log(str)
+
+var employeeData=[
+    {name:"vijay",designation:"FSD",salary:"9"},
+    {name:"aditya",designation:"Frontend",salary:"6"},
+    {name:"kishan",designation:"Backend",salary:"12"}
+]
+
+
+// employeeData.sort(function(a,b){
+//     if(a.name<b.name){
+//         return 1
+//     }
+//     if(a.name>b.name){
+//         return -1
+//     }
+
+//     return 0
+// })
+
+employeeData.sort(function(a,b){
+    return b.salary-a.salary
+})
+
+console.log(employeeData)
+</script>
