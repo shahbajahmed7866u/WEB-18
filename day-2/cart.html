@@ -1,172 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-table{
-  margin: auto;
+      table {
+        margin: auto;
+      }
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      body > :nth-child(1) {
+        display: flex;
+        justify-content: space-around;
+        /* margin-top: 30px; */
+        background-color: rgb(0, 132, 255);
+        margin: none;
+        padding: none;
+        font-size: xx-large;
+        padding: 15px 0px;
+      }
+      body > :nth-child(1) > a {
+        text-decoration: none;
+        color: white;
+      }
+      table {
+        width: 60%;
+      }
+      #discount {
+        display: grid;
+        width: 20%;
+        /* justify-content: space-around; */
+        margin: auto;
+        /* border: 2px solid green; */
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+          rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+          rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        gap: 10px;
+        text-align: center;
+        padding: 10px 20px;
+        border-radius: 10px;
+      }
+      #discount>button{
+        border: none;
+       background-color:rgb(0, 132, 255);
+       color: white;
+       margin: auto;
+       width: 60%;
+       height: 40px;
+       font-size: large;
+       border-radius: 10px;
+      }
+      #discount>button:hover{
+        border: 1px solid rgb(0, 132, 255);
+       background-color:white;
+       color: rgb(0, 132, 255);
+       margin: auto;
+       width: 60%;
+       height: 40px;
+       font-size: large;
+       border-radius: 10px;
+       cursor: pointer;
+      }
+      #discount>:nth-child(2){
+        border:1px silid grey ;
+       /* background-color:rgb(0, 132, 255); */
+       /* color: white; */
+       margin: auto;
+       width: 100%;
+       height: 40px;
+       font-size: large;
+       /* border-radius: 10px; */
+      }
+
+      #discount > :nth-child(1) {
+        margin: auto;
+      }
+      #discount > :nth-child(1) {
+        /* display: flex; */
+        width: 70%;
+        /* justify-content: space-around; */
+        /* margin: auto;  */
+        /* border: 2px solid green; */
+      }
+      #total {
+        display: flex;
+        width: 25%;
+        justify-content: space-around;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        /* border: 2px solid green; */
+      }
+
+      #total > :nth-child(1) {
+        /* display: flex; */
+        width: 70%;
+        /* justify-content: space-around; */
+        /* margin: auto;  */
+        /* border: 2px solid green; */
+      }
+      #body{
+          border-left: 1px solid gray;
+          border-top: 1px solid gray;
+      }
+      button{
+          /* border: 1px solid gray; */
+          border:none;
+       background-color:rgb(0, 132, 255);
+       color: white;
+       margin: auto;
+       width: 100%;
+       height: 30px;
+       font-size: x-small;
+       border-radius: 5px;
+      }
+      button:hover{
+          /* border: 1px solid gray; */
+          border: 1px solid rgb(0, 132, 255);
+       background-color:rgb(255, 255, 255);
+       color: rgb(0, 132, 255);
+       margin: auto;
+       width: 100%;
+       height: 30px;
+       font-size: x-small;
+       border-radius: 5px;
+       cursor: pointer;
+      }
+#checkout{
+    
+    /* margin: 100px 39%; */
+    width: 250px;
+    height: 50px;
+    /* font-size: medium; */
+        /* text-align: center; */
+    margin: 50px auto ;
+    /* margin-top: 20px; */
   
 }
-     *{
-margin: 0px;
-padding: 0px;
-}
-body>:nth-child(1){
-display: flex;
-justify-content: space-around;
-/* margin-top: 30px; */
-background-color: rgb(0, 132, 255);
-margin: none;
-padding: none;
-font-size: xx-large;
-padding: 15px 0px;
-
-}
-body>:nth-child(1)>a{
-text-decoration: none;
-color: white;
-
-}
-table{
-    width: 60%;
-}
-#discount{
-    display: flex;
-    width: 55%;
-    justify-content: space-around;
-    margin: auto;
-    /* border: 2px solid green; */
-}
-#discount>:nth-child(1){
-     /* display: flex; */
-    width: 70%; 
-    /* justify-content: space-around; */
-    /* margin: auto;  */
-    /* border: 2px solid green; */
-}
-#total{
-    display: flex;
-    width: 55%;
-    justify-content: space-around;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    /* border: 2px solid green; */
-}
-#total>:nth-child(1){
-     /* display: flex; */
-    width: 70%; 
-    /* justify-content: space-around; */
-    /* margin: auto;  */
-    /* border: 2px solid green; */
+#checkout>button{
+    
+    /* margin: 100px 39%; */
+    width: 100%;
+    height: 100%;
+    font-size: medium;
+        /* text-align: center; */
+    /* margin: auto; */
+  
 }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <a href="index.html">Signup</a>
-        <a href="login.html">Login</a>
-        <a href="mens.html">Mens</a>
-        <a href="womens.html">Womens</a>
+      <a href="index.html">Signup</a>
+      <a href="login.html">Login</a>
+      <a href="mens.html">Mens</a>
+      <a href="womens.html">Womens</a>
     </div>
     <table>
-        <thead>
-<tr><th>Image</th><th>Name</th><th>Price</th><th>Delete</th></tr>
-        </thead>
-        <tbody id="body">
-        </tbody>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="body"></tbody>
     </table>
-</body>
+  </body>
 </html>
 
 <script>
-var addCart = JSON.parse(localStorage.getItem("carts")) || []
+  var addCart = JSON.parse(localStorage.getItem("carts")) || [];
+
+  showCart(addCart);
 
 
-showCart(addCart)
+    
 
-var totalcart=addCart.reduce(function(sum,el,index,arr){
-        return sum + Number(el.prices)
-    },0) || 0
+  // console.log(total)
+  function showCart(addCart) {
+    addCart.forEach(function (elem, index) {
+      var tr = document.createElement("tr");
+      var td1 = document.createElement("td");
+      var img = document.createElement("img");
+      td1.append(img);
+      img.setAttribute("src", elem.images);
+      var td2 = document.createElement("td");
+      td2.innerText = elem.names;
+      var td3 = document.createElement("td");
+      td3.innerText = elem.prices;
+      var td4 = document.createElement("td");
+      // td4.setAttribute("id","deleteTable")
+      var remove = document.createElement("button");
+      remove.addEventListener("click", function () {
+        deleteFunc(elem, index);
+      });
+      remove.innerText = "Delete Item";
+      td4.append(remove);
 
-
-// console.log(total)
-function showCart(addCart){
-    addCart.forEach(function (elem,index) {
-        var tr = document.createElement("tr")
-        var td1 = document.createElement("td")
-        var img = document.createElement("img")
-        td1.append(img)
-        img.setAttribute("src",elem.images)
-        var td2 = document.createElement("td")
-        td2.innerText=elem.names
-        var td3 = document.createElement("td")
-        td3.innerText=elem.prices
-        var td4 = document.createElement("td")
-        // td4.setAttribute("id","deleteTable")
-        var remove = document.createElement("button")
-        remove.addEventListener("click",function(){
-            deleteFunc(elem,index)
-        })
-        remove.innerText="Delete Item"
-        td4.append(remove)
-        
-        var td5 = document.createElement("td")
-        tr.append(td1, td2, td3, td4, td5);
-        document.querySelector("#body").append(tr);
+      var td5 = document.createElement("td");
+      tr.append(td1, td2, td3, td4);
+      document.querySelector("#body").append(tr);
     });
+  }
+
+  var checkPromo = "masai30";
+
+  function deleteFunc(elem, index) {
+    addCart.splice(index, 1);
+    console.log(addCart);
+    localStorage.setItem("carts", JSON.stringify(addCart));
+    var newCart = JSON.parse(localStorage.getItem("carts"));
+    document.querySelector("#body").innerHTML = "";
+    showCart(newCart);
+    window.location.reload();
+  }
+  
+  var discount = document.createElement("div");
+  discount.setAttribute("id", "discount");
+  var fordiscount = document.createElement("h3");
+  fordiscount.innerText = "Enter Promo Code for Discount";
+  var fordiscountinput = document.createElement("input");
+  discount.append(fordiscount, fordiscountinput);
+  var fordiscountbutton = document.createElement("button");
+  fordiscountbutton.innerText = "Apply";
+  discount.append(fordiscount, fordiscountinput, fordiscountbutton);
+  fordiscountbutton.addEventListener("click", giveDiscount);
+//   document.querySelector("body").append(discount);
+
+  var total = document.createElement("div");
+  total.setAttribute("id", "total");
+  var fortotal = document.createElement("h3");
+  fortotal.setAttribute("id","itemno")
+  //   fortotal.innerText = "Total";
+  var fortotalprice = document.createElement("h3");
+  fortotalprice.setAttribute("id","itemprice")
+//   fortotalprice.innerText = totalcart;
+//   console.log(total);
+  total.append(fortotal, fortotalprice);
+  discount.append(fordiscount, fordiscountinput, fordiscountbutton);
+
+var checkOutBox= document.createElement("div")
+var checkOut= document.createElement("button")
+checkOutBox.setAttribute("id","checkout")
+checkOutBox.append(checkOut)
+  checkOut.innerText="CheckOut"
+  checkOut.addEventListener("click",function(){
+      checkoutpayment(totalcart)
+  })
+  document.querySelector("body").append(total,discount,checkOutBox);
+
+
+  
+  function giveDiscount() {
+    if (fordiscountinput.value == checkPromo) {
+      console.log("hahaha");
+      localStorage.setItem("userPromo",fordiscountinput.value)
+    //   console.log()
+    alert("You got 30% discount")
+    fordiscountinput.value=""
+    } else {
+        alert("Please Enter valid Promo code")
+    }
+    displayTotal(lengthcart,totalcart);
+        window.location.reload();
+  }
+
+
+  
+  var totalcart =
+    addCart.reduce(function (sum, el, index, arr) {
+      return sum + Number(el.prices);
+    }, 0)
+
+    var lengthcart = addCart.length;
+
+    console.log(totalcart,lengthcart)
+
+    displayTotal(lengthcart,totalcart)
+
+ function displayTotal(lengthcart,totalcart){
+    var userPromo = localStorage.getItem("userPromo");
+    // console.log(userPromo)
+    if(userPromo != null){
+        totalcart = (totalcart*70/100)
+    }
+    document.querySelector("#itemno").innerText='The Total Price of ' +lengthcart+" item is"
+    document.querySelector("#itemprice").innerText=totalcart+" Rs."
+    // window.location.reload();
 }
 
-var checkPromo = "masai30" 
 
-
-function deleteFunc(elem,index){
-    addCart.splice(index,1)
-    console.log(addCart)
-    localStorage.setItem("carts",JSON.stringify(addCart))
-    var newCart=JSON.parse(localStorage.getItem("carts"))
-document.querySelector('#body').innerHTML=""
-showCart(newCart)
-}
-
-var discount  = document.createElement("div")
-discount.setAttribute("id","discount")
-var fordiscount = document.createElement("h3")
-fordiscount.innerText="Enter Promo Code for Discount"
-var fordiscountinput = document.createElement("input")
-discount.append(fordiscount,fordiscountinput)
-var fordiscountbutton = document.createElement("button")
-fordiscountbutton.innerText="Apply"
-discount.append(fordiscount,fordiscountinput,fordiscountbutton)
-fordiscountbutton.addEventListener("click",giveDiscount)
-document.querySelector("body").append(discount)
-
-var total  = document.createElement("div")
-total.setAttribute("id","total")
-var fortotal = document.createElement("h3")
-fortotal.innerText="Total"
-var fortotalprice = document.createElement("h3")
-fortotalprice.innerText=totalcart
-console.log(total)
-total.append(fortotal,fortotalprice)
-discount.append(fordiscount,fordiscountinput,fordiscountbutton)
-document.querySelector("body").append(total)
-
-
-function giveDiscount(){
-    if(fordiscountinput.value==checkPromo){
-        console.log("hahaha")
-        totalcart70=newCart*(70/100)
-        fortotalprice.innerText=totalcart70
-        
-    }
-    else{
-     
-    }
-
+function  checkoutpayment(totalcart){
+    localStorage.setItem("totalcart",totalcart)
+    window.location.href="checkout.html"
 }
 
 </script>
