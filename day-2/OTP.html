@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <style>
+          *{
+            /* font-family: Arial, Helvetica, sans-serif; */
+            margin: 0px;
+            border: 0px;
+        }
+        #navbar{
+            display: flex;
+        justify-content: space-around;
+        /* margin-top: 30px; */
+        background-color: rgb(0, 132, 255);
+        margin: none;
+        padding: none;
+        font-size: xx-large;
+        padding: 15px 0px;
+        color: white;
+        }
+        #navbar>div>a{
+            color: rgb(255, 255, 255);
+        }
+        a{
+            text-decoration: none;
+        }
+        #navbar a{
+            cursor: pointer;
+        }
+
+        #form2{
+            width: 300px;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+      
+        input[type="text"],input[type="month"],input[type="password"]{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+            font-size: 14px;
+        }
+        input[type="submit"]{
+          /* border: 1px solid gray; */
+          border:none;
+       background-color:rgb(0, 132, 255);
+       color: white;
+       margin: auto;
+       width: 100%;
+       height: 30px;
+       /* font-size: x-small; */
+       border-radius: 5px;
+      }
+        
+        input[type="submit"]:hover{
+            border: 1px solid rgb(0, 132, 255);
+       background-color:rgb(255, 255, 255);
+       color: rgb(0, 132, 255);
+       margin: auto;
+       width: 100%;
+       height: 30px;
+       /* font-size: x-small; */
+       border-radius: 5px;
+       cursor: pointer;
+        }
+        h2{
+            margin-top: 3px;
+        }
+
+
+    </style>
+</head>
+<body> 
+    <div id="navbar">
+        <div><a href="mens.html">Home Page</a></div>
+       
+    </div>
+  
+    <form id="form2">
+        <h2>OTP Varification</h2>
+        <label for="">Enter OTP sent to your mobile number +91-7982360649</label> <br>
+        <input id="otp" type="text" name="OTP" placeholder="Enter OTP"> <br>
+       
+        <input id="sendOtp" type="submit" value="Procced">
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("#form2").addEventListener("submit",procced);
+
+    function procced(){
+        event.preventDefault();
+        var otp = document.querySelector("#otp").value;
+
+        if(otp == "1234"){
+            alert("payment successful");
+            window.location.href = "index.html";
+        } else{
+            alert("Enter Valid OTP");
+            window.location.reload();
+        }
+    }
+</script>
